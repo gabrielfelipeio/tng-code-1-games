@@ -1,2 +1,2 @@
-# Learning - 1
-Repository for studying and practicing python... 🐍
+# Learning - 1 :mortar_board:
+Repository for studying and practicing... :books:
