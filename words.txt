@@ -1,0 +1,4 @@
+desk
+pencil
+notebook
+smartphone
