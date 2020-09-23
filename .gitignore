@@ -1,2 +1,4 @@
 __pycache__/
 .vscode
+games/__pycache__/
+oo/__pycache__/
