@@ -1,24 +1,48 @@
 
 class Movie:
     def __init__(self, name, year, duration):
-        self.name = name.title()
+        self.__name = name.title()
         self.year = year
         self.duration = duration
-        self.likes = 0
+        self.__likes = 0
+
+    @property
+    def likes(self):
+        return self.__likes
 
     def do_like(self):
         self.likes += 1
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, new_name):
+        self.__name = new_name.title()
 
 
 class Series:
     def __init__(self, name, year, seasons):
-        self.name = name.title()
+        self.__name = name.title()
         self.year = year
         self.seasons = seasons
-        self.likes = 0
+        self.__likes = 0
+
+    @property
+    def likes(self):
+        return self.__likes
 
     def do_like(self):
         self.likes += 1
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, new_name):
+        self.__name = new_name.title()
 
 
 avengers = Movie('Avengers - Infinity War', 2018, 160)
