@@ -46,8 +46,11 @@ class Series:
 
 
 avengers = Movie('Avengers - Infinity War', 2018, 160)
+avengers.do_like()
 print(
     f'Nome: {avengers.name} - Ano: {avengers.year} - Duração: {avengers.duration} - Likes: {avengers.likes}')
 
 atlanta = Series('Atlanta', 2018, 2)
+atlanta.do_like()
+atlanta.do_like()
 print(f'Nome: {atlanta.name} - Ano: {atlanta.year} - Duração: {atlanta.seasons} - Likes: {atlanta.likes}')
