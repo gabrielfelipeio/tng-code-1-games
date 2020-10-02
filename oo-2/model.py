@@ -19,6 +19,8 @@ class Movie:
     @name.setter
     def name(self, new_name):
         self.__name = new_name.title()
+
+
 class Series:
     def __init__(self, name, year, seasons):
         self.__name = name.title()
