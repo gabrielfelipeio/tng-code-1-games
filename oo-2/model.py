@@ -44,10 +44,15 @@ class Series(Program):
 class Playlist:
     def __init__(self, name, programs):
         self.name = name
-        self.programs = programs
+        self._programs = programs
 
+    @property
+    def listing(self):
+        return self._programs
+
+    @property
     def size(self):
-        return len(self.programs)
+        return len(self._programs)
 
 
 avengers = Movie('Avengers - Infinity War', 2018, 160)
@@ -65,5 +70,9 @@ the_flash.do_like()
 movies_and_series = [avengers, injustice, atlanta, the_flash]
 weekend_playlist = Playlist('Weekend', movies_and_series)
 
-for program in weekend_playlist.programs:
+print(f'Playlist Size: {len(weekend_playlist)}')
+print(
+    f'The Flash is in the Playlist? answear: {the_flash in weekend_playlist.listing}')
+
+for program in weekend_playlist.listing:
     print(program)
