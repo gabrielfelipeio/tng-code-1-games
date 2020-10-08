@@ -9,7 +9,7 @@ class Program:
         return self._likes
 
     def do_like(self):
-        self.likes += 1
+        self._likes += 1
 
     @property
     def name(self):
@@ -19,11 +19,17 @@ class Program:
     def name(self, new_name):
         self._name = new_name.title()
 
+    def print(self):
+        print(f'{self._name} - {self.year}: {self._likes} Likes')
+
 
 class Movie(Program):
     def __init__(self, name, year, duration):
         super().__init__(name, year)
         self.duration = duration
+
+    def print(self):
+        print(f'{self._name} - {self.year} - {self.duration} min - {self._likes} Likes')
 
 
 class Series(Program):
@@ -31,13 +37,19 @@ class Series(Program):
         super().__init__(name, year)
         self.seasons = seasons
 
+    def print(self):
+        print(
+            f'{self._name} - {self.year} - {self.seasons} seasons - {self._likes} Likes')
+
 
 avengers = Movie('Avengers - Infinity War', 2018, 160)
 avengers.do_like()
-print(
-    f'{avengers.name} - {avengers.duration}: {avengers.likes}')
 
 atlanta = Series('Atlanta', 2018, 2)
 atlanta.do_like()
 atlanta.do_like()
-print(f'{atlanta.name} - {atlanta.seasons}: {atlanta.likes}')
+
+
+movies_and_series = [avengers, atlanta]
+for program in movies_and_series:
+    program.print()
