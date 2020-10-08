@@ -39,6 +39,8 @@ class Series(Program):
 
     def __str__(self):
         return f'{self._name} - {self.year} - {self.seasons} seasons - {self._likes} Likes'
+
+
 class Playlist:
     def __init__(self, name, programs):
         self.name = name
