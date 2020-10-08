@@ -41,14 +41,29 @@ class Series(Program):
         return f'{self._name} - {self.year} - {self.seasons} seasons - {self._likes} Likes'
 
 
+class Playlist:
+    def __init__(self, name, programs):
+        self.name = name
+        self.programs = programs
+
+    def size(self):
+        return len(self.programs)
+
+
 avengers = Movie('Avengers - Infinity War', 2018, 160)
-avengers.do_like()
-
+injustice = Movie('Injustice', 2021, 190)
 atlanta = Series('Atlanta', 2018, 2)
+the_flash = Series('The Flash', 2014, 5)
+
+avengers.do_like()
+injustice.do_like()
+injustice.do_like()
 atlanta.do_like()
 atlanta.do_like()
+the_flash.do_like()
 
+movies_and_series = [avengers, injustice, atlanta, the_flash]
+weekend_playlist = Playlist('Weekend', movies_and_series)
 
-movies_and_series = [avengers, atlanta]
-for program in movies_and_series:
+for program in weekend_playlist.programs:
     print(program)
