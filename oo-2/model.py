@@ -19,8 +19,8 @@ class Program:
     def name(self, new_name):
         self._name = new_name.title()
 
-    def print(self):
-        print(f'{self._name} - {self.year}: {self._likes} Likes')
+    def __str__(self):
+        return f'{self._name} - {self.year}: {self._likes} Likes'
 
 
 class Movie(Program):
@@ -28,8 +28,8 @@ class Movie(Program):
         super().__init__(name, year)
         self.duration = duration
 
-    def print(self):
-        print(f'{self._name} - {self.year} - {self.duration} min - {self._likes} Likes')
+    def __str__(self):
+        return f'{self._name} - {self.year} - {self.duration} min - {self._likes} Likes'
 
 
 class Series(Program):
@@ -37,9 +37,8 @@ class Series(Program):
         super().__init__(name, year)
         self.seasons = seasons
 
-    def print(self):
-        print(
-            f'{self._name} - {self.year} - {self.seasons} seasons - {self._likes} Likes')
+    def __str__(self):
+        return f'{self._name} - {self.year} - {self.seasons} seasons - {self._likes} Likes'
 
 
 avengers = Movie('Avengers - Infinity War', 2018, 160)
@@ -52,4 +51,4 @@ atlanta.do_like()
 
 movies_and_series = [avengers, atlanta]
 for program in movies_and_series:
-    program.print()
+    print(program)
